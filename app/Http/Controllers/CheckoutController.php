@@ -619,7 +619,7 @@ class CheckoutController extends Controller
                     [
                         'quantity' => $quantities[$i],
                         'price' => $prices[$i],
-                        'color' => $color[$i],
+//                        'color' => $color[$i],
                     ]
                 );
             }

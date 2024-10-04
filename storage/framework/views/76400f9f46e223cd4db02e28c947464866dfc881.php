@@ -159,6 +159,32 @@
             color: #fff;
         }
 
+        .discount-percentage{
+            font-size: 12px;
+            font-weight: 600;
+            background: maroon;
+            color: #fff;
+            padding: 0px 10px;
+        }
+
+        .product-desc:hover{
+            box-shadow: 0px 0px 15px #ddd;
+        }
+        .col-md-3.mt-3.product-desc {
+            padding: 15px 15px;
+        }
+        .slick-track {
+            margin: 15px;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 0rem;
+        }
+        dl, ol, ul{
+            margin-bottom: 0;
+        }
+
     </style>
 
     <?php echo $__env->yieldContent('css'); ?>

@@ -37,8 +37,9 @@ class Section extends Model
     }
 
 
-//    function products(){
-//        return $this->hasMany('Product','section_id');
-//    }
+    public function get_products(){
+        return $this->hasMany('\App\Models\Product', 'section_id', 'id');
+    }
+
 
 }

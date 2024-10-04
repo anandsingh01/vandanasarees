@@ -1,95 +1,94 @@
-<?php $getCommonSetting = getCommonSetting();?>
+<?php $getCommonSetting = getCommonSetting(); ?>
 
 <?php $__env->startSection('css'); ?>
-<style>
-    .carousel-inner {
-        width: 100%;
-        max-height: 700px; /* Set a max height for the carousel */
-    }
+    <style>
+        .carousel-inner {
+            width: 100%;
+            max-height: 700px; /* Set a max height for the carousel */
+        }
 
-    .carousel-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        min-height: 100vh;
-    }
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            min-height: 100vh;
+        }
 
-    .header-text {
-        position: absolute;
-        bottom: 20%;
-        left: 5%;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 20px;
-        z-index: 10;
-    }
+        .header-text {
+            position: absolute;
+            bottom: 20%;
+            left: 5%;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            z-index: 10;
+        }
 
-    /* Product slider styles */
-    .product-slider {
-        margin: 40px 0;
-        margin:0 auto;
-    }
+        /* Product slider styles */
+        .product-slider {
+            margin: 40px 0;
+            margin: 0 auto;
+        }
 
-    .product-item {
-        padding: 15px;
-        text-align: center;
-        box-sizing: border-box;
-    }
+        .product-item {
+            padding: 15px;
+            text-align: center;
+            box-sizing: border-box;
+        }
 
-    .product-item img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
+        .product-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
 
-        border-top-left-radius: 50%;
-        border-top-right-radius: 50%;
-    }
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+        }
 
-    .product-title {
-        font-size: 15px;
-        margin-top: 10px;
-        font-weight: 300;
-    }
+        .product-title {
+            font-size: 15px;
+            margin-top: 10px;
+            font-weight: 300;
+        }
 
-    .product-price {
-        font-size: 16px;
-        color: #d9534f;
-        font-weight: 300;
-    }
+        .product-price {
+            font-size: 16px;
+            color: #d9534f;
+            font-weight: 300;
+        }
 
-    .product-price-strike {
-        font-size: 14px;
-        text-decoration: line-through;
-        color: #999;
-        margin-left: 10px;
-    }
+        .product-price-strike {
+            font-size: 14px;
+            text-decoration: line-through;
+            color: #999;
+            margin-left: 10px;
+        }
 
-    .product-slider.slick-initialized.slick-slider.slick-dotted{
-        width:95%;
-        margin:0 auto;
-    }
+        .product-slider.slick-initialized.slick-slider.slick-dotted {
+            width: 95%;
+            margin: 0 auto;
+        }
 
-    /* Ensure carousel controls are on top of images */
-    .carousel-control-prev, .carousel-control-next {
-        z-index: 11;
-    }
+        /* Ensure carousel controls are on top of images */
+        .carousel-control-prev, .carousel-control-next {
+            z-index: 11;
+        }
 
-    /* Collection title */
-    .collection-title {
-        text-align: center;
-        font-size: 2rem;
-        font-weight: bold;
-    }
+        /* Collection title */
+        .collection-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
 
-    .section_heading {
-        padding: 0;
-        margin-bottom: 0;
-    }
+        .section_heading {
+            padding: 0;
+            margin-bottom: 0;
+        }
 
 
-</style>
-
+    </style>
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('body'); ?>
@@ -181,19 +180,27 @@
             <div class="features row">
 
                 <div class="feature-item col-md-3 col-sm-3 col-xs-3 col-6">
-                    <img src="https://cdn-icons-png.freepik.com/256/15682/15682984.png?ga=GA1.1.98304431.1716115737&semt=ais_hybrid" alt="Family">
+                    <img
+                        src="https://cdn-icons-png.freepik.com/256/15682/15682984.png?ga=GA1.1.98304431.1716115737&semt=ais_hybrid"
+                        alt="Family">
                     <h3>Instant shipping </h3>
                 </div>
                 <div class="feature-item col-md-3 col-sm-3 col-xs-3 col-6">
-                    <img src="https://cdn-icons-png.freepik.com/256/12838/12838411.png?ga=GA1.1.98304431.1716115737&semt=ais_hybrid" alt="Handloom">
+                    <img
+                        src="https://cdn-icons-png.freepik.com/256/12838/12838411.png?ga=GA1.1.98304431.1716115737&semt=ais_hybrid"
+                        alt="Handloom">
                     <h3>Authentic Handlooms</h3>
                 </div>
                 <div class="feature-item col-md-3 col-sm-3 col-xs-3 col-6">
-                    <img src="https://cdn-icons-png.freepik.com/256/5277/5277616.png?ga=GA1.1.98304431.1716115737&semt=ais_hybrid" alt="Legacy">
+                    <img
+                        src="https://cdn-icons-png.freepik.com/256/5277/5277616.png?ga=GA1.1.98304431.1716115737&semt=ais_hybrid"
+                        alt="Legacy">
                     <h3>Legacy since 1974</h3>
                 </div>
                 <div class="feature-item col-md-3 col-sm-3 col-xs-3 col-6">
-                    <img src="https://cdn-icons-png.freepik.com/256/7665/7665890.png?ga=GA1.1.98304431.1716115737&semt=ais_hybrid" alt="India">
+                    <img
+                        src="https://cdn-icons-png.freepik.com/256/7665/7665890.png?ga=GA1.1.98304431.1716115737&semt=ais_hybrid"
+                        alt="India">
                     <h3>Silk mark </h3>
                 </div>
             </div>
@@ -236,7 +243,6 @@
         }
 
 
-
         .collection-text {
             font-size: 1rem;
             margin-bottom: 10px;
@@ -257,7 +263,7 @@
             color: white;
         }
 
-        .second_section  .slick-initialized .slick-slide{
+        .second_section .slick-initialized .slick-slide {
             padding: 5px;
         }
 
@@ -269,14 +275,14 @@
         <div class="row">
             <div class="collection-slider">
                 <?php $__empty_1 = true; $__currentLoopData = $section_on_home; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $section_on_homes): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
-                <div class="collection-item">
-                    <img src="<?php echo e(asset($section_on_homes->image)); ?>" alt="Handwoven Sarees">
-                    <div class="collection-content">
-
-                        <h3 class="collection-title1"><?php echo e($section_on_homes->category_name); ?></h3>
-                        <a href="<?php echo e(url('collections/'.$section_on_homes->slug)); ?>" class="btn btn-shop">SHOP NOW</a>
+                    <div class="collection-item">
+                        <img src="<?php echo e(asset($section_on_homes->image)); ?>" alt="Handwoven Sarees">
+                        <div class="collection-content">
+                            
+                            <h3 class="collection-title1"><?php echo e($section_on_homes->category_name); ?></h3>
+                            <a href="<?php echo e(url('collections/'.$section_on_homes->slug)); ?>" class="btn btn-shop">SHOP NOW</a>
+                        </div>
                     </div>
-                </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                 <?php endif; ?>
             </div>
@@ -296,6 +302,7 @@
             background-position: center;
             background-attachment: fixed;
         }
+
         .hero-content1 {
             position: absolute;
             top: 50%;
@@ -353,9 +360,10 @@
     </div>
     <style>
         .product-slider .slick-slide img {
-            height:400px;
+            height: 400px;
             object-position: top;
         }
+
         h3.product-title a:hover {
             color: maroon;
         }
@@ -364,20 +372,35 @@
     <div class=" product-slider">
 
         <?php $__empty_1 = true; $__currentLoopData = $get_sarees; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $get_sareess): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
-        <div class="product-item">
-            <a href="<?php echo e(url('products/'.$get_sareess->slug)); ?>">
-            <img src="<?php echo e(asset($get_sareess->photo)); ?>" alt="Beautiful Saffron Orange Lehenga With Heavy Hand Embroidery From Banaras">
-            </a>
+            <div class="product-desc">
+            <div class="product-item">
+                <a href="<?php echo e(url('products/'.$get_sareess->slug)); ?>">
+                    <img src="<?php echo e(asset($get_sareess->photo)); ?>"
+                         alt="Beautiful Saffron Orange Lehenga With Heavy Hand Embroidery From Banaras">
+                </a>
                 <h3 class="product-title">
                     <a href="<?php echo e(url('products/'.$get_sareess->slug)); ?>">    <?php echo e($get_sareess->title); ?> </a>
                 </h3>
-            <p class="product-price">
-                <span class="currency-symbol">₹</span> <?php echo e(number_format($get_sareess->product_actual_price ?? '' , 2)); ?> <span
-                    class="product-price-strike"><span class="currency-symbol">₹</span>  <?php echo e(number_format($get_sareess->product_max_selling_price ?? '', 2)); ?></span></p>
+                <p class="product-price text-center">
 
+                    <span class="currency-symbol">₹</span>
+                    <span class="sale_price"><?php echo e(number_format($get_sareess->product_actual_price ?? 0 , 2)); ?></span>
+                    <del class="product-price-strike">
+                        <span class="currency-symbol">₹</span>
+                        <?php echo e(number_format($get_sareess->product_max_selling_price ?? 0, 2)); ?>
 
+                    </del>
+                    <br>
+                    <?php if(!empty($get_sareess->product_max_selling_price) && !empty($get_sareess->product_actual_price)): ?>
+                        <?php
+                            $discount = (($get_sareess->product_max_selling_price - $get_sareess->product_actual_price) / $get_sareess->product_max_selling_price) * 100;
+                        ?>
+                        <span class="discount-percentage"><?php echo e(number_format($discount, 2)); ?>% OFF</span>
+                    <?php endif; ?>
 
-        </div>
+                </p>
+            </div>
+            </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
         <?php endif; ?>
 
@@ -416,7 +439,7 @@
             position: absolute;
             bottom: 50%;
             transform: translateY(50%);
-            background-color:#fff;
+            background-color: #fff;
             padding: 10px;
             width: 70%;
             text-align: center;
@@ -498,7 +521,8 @@
             <h1><?php echo e($get_middle_banner->banner_heading ?? ''); ?></h1>
             <h4><?php echo e($get_middle_banner->banner_subheading ?? ''); ?></h4>
             <p><?php echo e($get_middle_banner->banner_description ?? ''); ?></p>
-            <a href="<?php echo e($get_middle_banner->banner_link ?? ''); ?>" class="btn"><?php echo e($get_middle_banner->banner_text ?? ''); ?></a>
+            <a href="<?php echo e($get_middle_banner->banner_link ?? ''); ?>"
+               class="btn"><?php echo e($get_middle_banner->banner_text ?? ''); ?></a>
         </div>
     </div>
 
@@ -514,31 +538,39 @@
     <div class="product-slider">
 
         <div class="product-item">
-            <img src="https://www.koskii.com/cdn/shop/files/Untitled-2_1_360x.jpg?v=1719216315" alt="Beautiful Saffron Orange Lehenga With Heavy Hand Embroidery From Banaras">
+            <img src="https://www.koskii.com/cdn/shop/files/Untitled-2_1_360x.jpg?v=1719216315"
+                 alt="Beautiful Saffron Orange Lehenga With Heavy Hand Embroidery From Banaras">
             <h3 class="product-title">Beautiful Saffron Orange Lehenga With Heavy Hand Embroidery From Banaras</h3>
             <p class="product-price"><span class="currency-symbol">₹</span> 2000.00 <span
                     class="product-price-strike"><span class="currency-symbol">₹</span> 3000.00</span></p>
         </div>
         <div class="product-item">
-            <img src="https://www.koskii.com/cdn/shop/files/KSK6237_360x.jpg?v=1719214558" alt=""Special Price" : Green & Pink Floral Digital Print Organza Lehenga">
+            <img src="https://www.koskii.com/cdn/shop/files/KSK6237_360x.jpg?v=1719214558" alt="" Special Price" : Green
+            & Pink Floral Digital Print Organza Lehenga">
             <h3 class="product-title">"Special Price" : Green & Pink Floral Digital Print Organza Lehenga</h3>
             <p class="product-price"><span class="currency-symbol">₹</span> 2500 <span
                     class="product-price-strike"><span class="currency-symbol">₹</span> 3500.00</span></p>
         </div>
         <div class="product-item">
-            <img src="https://cdn.shopify.com/s/files/1/0049/3649/9315/files/koskii-babypink-printed-crepe-designer-saree-saus0031503_babypink_6_large.jpg?v=1689579661" alt="Teal Green Banarasi Silk Embroidered Desinger Lehenga">
+            <img
+                src="https://cdn.shopify.com/s/files/1/0049/3649/9315/files/koskii-babypink-printed-crepe-designer-saree-saus0031503_babypink_6_large.jpg?v=1689579661"
+                alt="Teal Green Banarasi Silk Embroidered Desinger Lehenga">
             <h3 class="product-title">Teal Green Banarasi Silk Embroidered Desinger Lehenga</h3>
             <p class="product-price"><span class="currency-symbol">₹</span> 1800.00 <span
                     class="product-price-strike"><span class="currency-symbol">₹</span> 2800.00</span></p>
         </div>
         <div class="product-item">
-            <img src="https://cdn.shopify.com/s/files/1/0049/3649/9315/products/koskii-grey-sequins-shimmer-designer-saree-saus0021889_grey_6_large.jpg?v=1719838256" alt="Spectra Green Patola Lehenga With  Banarasi Dupatta">
-            <h3 class="product-title">Spectra Green Patola Lehenga With  Banarasi Dupatta</h3>
+            <img
+                src="https://cdn.shopify.com/s/files/1/0049/3649/9315/products/koskii-grey-sequins-shimmer-designer-saree-saus0021889_grey_6_large.jpg?v=1719838256"
+                alt="Spectra Green Patola Lehenga With  Banarasi Dupatta">
+            <h3 class="product-title">Spectra Green Patola Lehenga With Banarasi Dupatta</h3>
             <p class="product-price"><span class="currency-symbol">₹</span> 2200.00 <span
                     class="product-price-strike"><span class="currency-symbol">₹</span> 3200.00</span></p>
         </div>
         <div class="product-item">
-            <img src="https://cdn.shopify.com/s/files/1/0049/3649/9315/files/koskii-mauve-swarovski-semicrepe-designer-saree-saus0030407_mauve_1_1_large.jpg?v=1719812469" alt="Product 5">
+            <img
+                src="https://cdn.shopify.com/s/files/1/0049/3649/9315/files/koskii-mauve-swarovski-semicrepe-designer-saree-saus0030407_mauve_1_1_large.jpg?v=1719812469"
+                alt="Product 5">
             <h3 class="product-title">Pink Meenakari Uppada Katan Silk Handloom Banarasi Saree</h3>
             <p class="product-price"><span class="currency-symbol">₹</span> 2400.00 <span
                     class="product-price-strike"><span class="currency-symbol">₹</span> 3400.00</span></p>
@@ -558,7 +590,7 @@
             height: 80vh;
             padding: 60px 0;
             position: relative;
-            color: #fff; /* Change text color to white for better contrast with overlay */
+            color: maroon; /* Change text color to white for better contrast with overlay */
             z-index: 1;
             display: flex;
             align-items: center;
@@ -635,31 +667,39 @@
     <div class=" product-slider">
 
         <div class="product-item">
-            <img src="https://www.koskii.com/cdn/shop/files/Untitled-2_1_360x.jpg?v=1719216315" alt="Beautiful Saffron Orange Lehenga With Heavy Hand Embroidery From Banaras">
+            <img src="https://www.koskii.com/cdn/shop/files/Untitled-2_1_360x.jpg?v=1719216315"
+                 alt="Beautiful Saffron Orange Lehenga With Heavy Hand Embroidery From Banaras">
             <h3 class="product-title">Beautiful Saffron Orange Lehenga With Heavy Hand Embroidery From Banaras</h3>
             <p class="product-price"><span class="currency-symbol">₹</span> 2000.00 <span
                     class="product-price-strike"><span class="currency-symbol">₹</span> 3000.00</span></p>
         </div>
         <div class="product-item">
-            <img src="https://www.koskii.com/cdn/shop/files/KSK6237_360x.jpg?v=1719214558" alt=""Special Price" : Green & Pink Floral Digital Print Organza Lehenga">
+            <img src="https://www.koskii.com/cdn/shop/files/KSK6237_360x.jpg?v=1719214558" alt="" Special Price" : Green
+            & Pink Floral Digital Print Organza Lehenga">
             <h3 class="product-title">"Special Price" : Green & Pink Floral Digital Print Organza Lehenga</h3>
             <p class="product-price"><span class="currency-symbol">₹</span> 2500 <span
                     class="product-price-strike"><span class="currency-symbol">₹</span> 3500.00</span></p>
         </div>
         <div class="product-item">
-            <img src="https://cdn.shopify.com/s/files/1/0049/3649/9315/files/koskii-babypink-printed-crepe-designer-saree-saus0031503_babypink_6_large.jpg?v=1689579661" alt="Teal Green Banarasi Silk Embroidered Desinger Lehenga">
+            <img
+                src="https://cdn.shopify.com/s/files/1/0049/3649/9315/files/koskii-babypink-printed-crepe-designer-saree-saus0031503_babypink_6_large.jpg?v=1689579661"
+                alt="Teal Green Banarasi Silk Embroidered Desinger Lehenga">
             <h3 class="product-title">Teal Green Banarasi Silk Embroidered Desinger Lehenga</h3>
             <p class="product-price"><span class="currency-symbol">₹</span> 1800.00 <span
                     class="product-price-strike"><span class="currency-symbol">₹</span> 2800.00</span></p>
         </div>
         <div class="product-item">
-            <img src="https://cdn.shopify.com/s/files/1/0049/3649/9315/products/koskii-grey-sequins-shimmer-designer-saree-saus0021889_grey_6_large.jpg?v=1719838256" alt="Spectra Green Patola Lehenga With  Banarasi Dupatta">
-            <h3 class="product-title">Spectra Green Patola Lehenga With  Banarasi Dupatta</h3>
+            <img
+                src="https://cdn.shopify.com/s/files/1/0049/3649/9315/products/koskii-grey-sequins-shimmer-designer-saree-saus0021889_grey_6_large.jpg?v=1719838256"
+                alt="Spectra Green Patola Lehenga With  Banarasi Dupatta">
+            <h3 class="product-title">Spectra Green Patola Lehenga With Banarasi Dupatta</h3>
             <p class="product-price"><span class="currency-symbol">₹</span> 2200.00 <span
                     class="product-price-strike"><span class="currency-symbol">₹</span> 3200.00</span></p>
         </div>
         <div class="product-item">
-            <img src="https://cdn.shopify.com/s/files/1/0049/3649/9315/files/koskii-mauve-swarovski-semicrepe-designer-saree-saus0030407_mauve_1_1_large.jpg?v=1719812469" alt="Product 5">
+            <img
+                src="https://cdn.shopify.com/s/files/1/0049/3649/9315/files/koskii-mauve-swarovski-semicrepe-designer-saree-saus0030407_mauve_1_1_large.jpg?v=1719812469"
+                alt="Product 5">
             <h3 class="product-title">Pink Meenakari Uppada Katan Silk Handloom Banarasi Saree</h3>
             <p class="product-price"><span class="currency-symbol">₹</span> 2400.00 <span
                     class="product-price-strike"><span class="currency-symbol">₹</span> 3400.00</span></p>
@@ -670,8 +710,9 @@
 
     <style>
         section.spacer {
-            background: #333;
+            background: #f7e2e2;
         }
+
         .c-container {
             margin: auto;
             width: 93%;
@@ -689,6 +730,7 @@
             -webkit-transition: all .2s;
             transition: all .2s;
         }
+
         .btn {
             border-radius: 5px;
             font-weight: normal;
@@ -701,10 +743,12 @@
             padding: 14px 30px;
             cursor: pointer;
         }
+
         .btn-outline-white:hover {
             background-color: #fff;
             color: var(--text-dark);
         }
+
         /* common css up */
 
         .testimonial p {
@@ -712,6 +756,7 @@
             letter-spacing: 0.02em;
             line-height: 35px;
         }
+
         .testimonial .name {
             font-weight: bold;
             font-size: 18px;
@@ -719,6 +764,7 @@
             line-height: 35px;
             text-align: left;
         }
+
         .testimonial .designation {
             font-size: 14px;
             letter-spacing: 0.04em;
@@ -726,21 +772,26 @@
             color: #fff;
             opacity: 0.65;
         }
+
         .unt {
             margin-bottom: 20px;
             margin-top: 60px;
         }
+
         .hero-text {
             font-size: 30px;
             letter-spacing: 0.02em;
             color: #fff;
         }
+
         .gallery-thumbs {
             height: 100%;
         }
+
         .gallery-thumbs .swiper-wrapper {
             align-items: center;
         }
+
         .gallery-thumbs .swiper-slide {
             background-position: center;
             background-size: cover;
@@ -748,6 +799,7 @@
             height: 330px;
             position: relative;
         }
+
         .gallery-thumbs .swiper-slide img {
             filter: contrast(0.5) blur(1px);
             width: 100%;
@@ -755,9 +807,11 @@
             object-fit: cover;
             border-radius: 10px;
         }
+
         .gallery-thumbs .swiper-slide-active img {
             filter: contrast(1) blur(0px) !important;
         }
+
         .flex-row {
             display: -webkit-box;
             display: -ms-flexbox;
@@ -767,6 +821,7 @@
             margin-right: -15px;
             margin-left: -15px;
         }
+
         .flex-row .flex-col {
             -ms-flex-preferred-size: 0;
             flex-basis: 0;
@@ -804,18 +859,22 @@
             padding-left: 100px;
             padding-right: 100px;
         }
+
         .swiper-container.testimonial {
             height: 100vh;
         }
+
         .testimonial-section .user-saying {
             background: var(--theme-color2);
             width: 60%;
             color: #fff;
             height: 100%;
         }
+
         .testi-user-img {
             width: 40%;
         }
+
         .testimonial-section {
             display: -webkit-box;
             display: -ms-flexbox;
@@ -826,6 +885,7 @@
             width: 100%;
             height: 100%;
         }
+
         .testimonial-section .quote p {
             font-size: 20px;
             font-weight: 300;
@@ -833,6 +893,7 @@
             font-style: italic;
             margin: 0;
         }
+
         .quote-icon {
             width: 38px;
             display: block;
@@ -861,17 +922,17 @@
                     <div class="swiper-wrapper ">
                         <!-- Slides -->
                         <?php $__empty_1 = true; $__currentLoopData = $reviews; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $reviewss): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
-                        <div class="swiper-slide">
-                            <div class="quote">
-                                <img class="quote-icon" src="https://md-aqil.github.io/images/quote.png" alt="">
-                                <p>
-                                    “<?php echo e(strip_tags($reviewss->review)); ?>“
-                                </p>
-                                <div class="name">-<?php echo e($reviewss->username); ?></div>
+                            <div class="swiper-slide">
+                                <div class="quote">
+                                    <img class="quote-icon" src="https://md-aqil.github.io/images/quote.png" alt="">
+                                    <p>
+                                        “<?php echo e(strip_tags($reviewss->review)); ?>“
+                                    </p>
+                                    <div class="name">-<?php echo e($reviewss->username); ?></div>
+                                    
 
-
+                                </div>
                             </div>
-                        </div>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                         <?php endif; ?>
 
@@ -939,39 +1000,57 @@
         <h2 class="text-center">Recent Blog Posts</h2>
         <div class="blog-slider">
             <div class="blog-item">
-                <img src="https://www.sacredweaves.com/cdn/shop/articles/Celebrate_Ganpati_with_Exquisite_Banarasi_Sarees_from_Sacred_Weaves_400x.jpg?v=1724148296" alt="Blog 1" class="img-fluid">
+                <img
+                    src="https://www.sacredweaves.com/cdn/shop/articles/Celebrate_Ganpati_with_Exquisite_Banarasi_Sarees_from_Sacred_Weaves_400x.jpg?v=1724148296"
+                    alt="Blog 1" class="img-fluid">
                 <h5>Celebrate Ganpati with Exquisite Banarasi Sarees from Sacred Weaves</h5>
-                <p>Ganesh Chaturthi is not just a festival; it's a celebration of culture, tradition, and the divine. Make this Ganpati truly special...</p>
+                <p>Ganesh Chaturthi is not just a festival; it's a celebration of culture, tradition, and the divine.
+                    Make this Ganpati truly special...</p>
                 <a href="#" class="read-more">Read more</a>
             </div>
             <div class="blog-item">
-                <img src="https://www.sacredweaves.com/cdn/shop/articles/Celebrate_Ganpati_with_Exquisite_Banarasi_Sarees_from_Sacred_Weaves_400x.jpg?v=1724148296" alt="Blog 2" class="img-fluid">
+                <img
+                    src="https://www.sacredweaves.com/cdn/shop/articles/Celebrate_Ganpati_with_Exquisite_Banarasi_Sarees_from_Sacred_Weaves_400x.jpg?v=1724148296"
+                    alt="Blog 2" class="img-fluid">
                 <h5>Embrace the elegance of Nayanthara’s style with our exquisite Tissue Banarasi Saree</h5>
-                <p>Recently, the stunning actress Nayanthara graced Anant Ambani’s wedding function in a gorgeous Tissue Banarasi saree...</p>
+                <p>Recently, the stunning actress Nayanthara graced Anant Ambani’s wedding function in a gorgeous Tissue
+                    Banarasi saree...</p>
                 <a href="#" class="read-more">Read more</a>
             </div>
             <div class="blog-item">
-                <img src="https://www.sacredweaves.com/cdn/shop/articles/Celebrate_Ganpati_with_Exquisite_Banarasi_Sarees_from_Sacred_Weaves_400x.jpg?v=1724148296" alt="Blog 3" class="img-fluid">
+                <img
+                    src="https://www.sacredweaves.com/cdn/shop/articles/Celebrate_Ganpati_with_Exquisite_Banarasi_Sarees_from_Sacred_Weaves_400x.jpg?v=1724148296"
+                    alt="Blog 3" class="img-fluid">
                 <h5>Sonakshi Sinha's Radiant Red Banarasi Silk Saree: A Bridal Marvel</h5>
-                <p>Sonakshi Sinha recently captivated everyone with her choice of bridal ensemble - A stunning Red Banarasi silk saree...</p>
+                <p>Sonakshi Sinha recently captivated everyone with her choice of bridal ensemble - A stunning Red
+                    Banarasi silk saree...</p>
                 <a href="#" class="read-more">Read more</a>
             </div>
             <div class="blog-item">
-                <img src="https://www.sacredweaves.com/cdn/shop/articles/Celebrate_Ganpati_with_Exquisite_Banarasi_Sarees_from_Sacred_Weaves_400x.jpg?v=1724148296" alt="Blog 3" class="img-fluid">
+                <img
+                    src="https://www.sacredweaves.com/cdn/shop/articles/Celebrate_Ganpati_with_Exquisite_Banarasi_Sarees_from_Sacred_Weaves_400x.jpg?v=1724148296"
+                    alt="Blog 3" class="img-fluid">
                 <h5>Sonakshi Sinha's Radiant Red Banarasi Silk Saree: A Bridal Marvel</h5>
-                <p>Sonakshi Sinha recently captivated everyone with her choice of bridal ensemble - A stunning Red Banarasi silk saree...</p>
+                <p>Sonakshi Sinha recently captivated everyone with her choice of bridal ensemble - A stunning Red
+                    Banarasi silk saree...</p>
                 <a href="#" class="read-more">Read more</a>
             </div>
             <div class="blog-item">
-                <img src="https://www.sacredweaves.com/cdn/shop/articles/Celebrate_Ganpati_with_Exquisite_Banarasi_Sarees_from_Sacred_Weaves_400x.jpg?v=1724148296" alt="Blog 3" class="img-fluid">
+                <img
+                    src="https://www.sacredweaves.com/cdn/shop/articles/Celebrate_Ganpati_with_Exquisite_Banarasi_Sarees_from_Sacred_Weaves_400x.jpg?v=1724148296"
+                    alt="Blog 3" class="img-fluid">
                 <h5>Sonakshi Sinha's Radiant Red Banarasi Silk Saree: A Bridal Marvel</h5>
-                <p>Sonakshi Sinha recently captivated everyone with her choice of bridal ensemble - A stunning Red Banarasi silk saree...</p>
+                <p>Sonakshi Sinha recently captivated everyone with her choice of bridal ensemble - A stunning Red
+                    Banarasi silk saree...</p>
                 <a href="#" class="read-more">Read more</a>
             </div>
             <div class="blog-item">
-                <img src="https://www.sacredweaves.com/cdn/shop/articles/Celebrate_Ganpati_with_Exquisite_Banarasi_Sarees_from_Sacred_Weaves_400x.jpg?v=1724148296" alt="Blog 3" class="img-fluid">
+                <img
+                    src="https://www.sacredweaves.com/cdn/shop/articles/Celebrate_Ganpati_with_Exquisite_Banarasi_Sarees_from_Sacred_Weaves_400x.jpg?v=1724148296"
+                    alt="Blog 3" class="img-fluid">
                 <h5>Sonakshi Sinha's Radiant Red Banarasi Silk Saree: A Bridal Marvel</h5>
-                <p>Sonakshi Sinha recently captivated everyone with her choice of bridal ensemble - A stunning Red Banarasi silk saree...</p>
+                <p>Sonakshi Sinha recently captivated everyone with her choice of bridal ensemble - A stunning Red
+                    Banarasi silk saree...</p>
                 <a href="#" class="read-more">Read more</a>
             </div>
             <!-- Add more blog items as needed -->
@@ -1017,8 +1096,13 @@
     <div class="location-map">
         <h2>Visit Our Store</h2>
         <div class="map-container">
-            <img src="https://scontent.fvns4-1.fna.fbcdn.net/v/t39.30808-6/364721421_794361996030272_2192306155012732520_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Tc3qI2FX9oEQ7kNvgGJ_gMB&_nc_ht=scontent.fvns4-1.fna&_nc_gid=ANrIXp2PLNImyn5Gg4AO-Dv&oh=00_AYD-JHKTQBUU2JjDD3lAJ8_kDS6soUnxujlNI4C5IGwDUg&oe=66CF6529" alt="Store Image" class="store-image">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.943430050021!2d82.98445087415786!3d25.30610462728321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e320750768c1b%3A0x75845f711d2e2ab9!2sVandana%20Sarees%20-%20Best%20Banarasi%20Saree%20Shop!5e0!3m2!1sen!2sin!4v1724489344153!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <img
+                src="https://scontent.fvns4-1.fna.fbcdn.net/v/t39.30808-6/364721421_794361996030272_2192306155012732520_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Tc3qI2FX9oEQ7kNvgGJ_gMB&_nc_ht=scontent.fvns4-1.fna&_nc_gid=ANrIXp2PLNImyn5Gg4AO-Dv&oh=00_AYD-JHKTQBUU2JjDD3lAJ8_kDS6soUnxujlNI4C5IGwDUg&oe=66CF6529"
+                alt="Store Image" class="store-image">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.943430050021!2d82.98445087415786!3d25.30610462728321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e320750768c1b%3A0x75845f711d2e2ab9!2sVandana%20Sarees%20-%20Best%20Banarasi%20Saree%20Shop!5e0!3m2!1sen!2sin!4v1724489344153!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 
@@ -1029,18 +1113,19 @@
             <div class="row">
                 <?php $__currentLoopData = $instagram_posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="col-md-4 mb-4">
-                        <iframe src="<?php echo e($post['permalink']); ?>embed" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                        <iframe src="<?php echo e($post['permalink']); ?>embed" width="400" height="480" frameborder="0"
+                                scrolling="no" allowtransparency="true"></iframe>
 
-
-
-
-
-
-
-
-
-
-
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                     </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
@@ -1077,7 +1162,7 @@
 
 
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             $('.customer-logos').slick({
                 slidesToShow: 6,
                 slidesToScroll: 1,

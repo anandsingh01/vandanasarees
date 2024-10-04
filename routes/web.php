@@ -156,7 +156,7 @@ Route::get('resent-email-verification',  [\App\Http\Controllers\Auth\Verificatio
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 //Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->middleware('HtmlMinifier');
 Route::get('shop', [App\Http\Controllers\HomeController::class, 'shop']);
-Route::get('shop/{slug}', [App\Http\Controllers\HomeController::class, 'product_by_category']);
+Route::get('collections/{slug}', [App\Http\Controllers\HomeController::class, 'product_by_category']);
 Route::get('brands', [App\Http\Controllers\HomeController::class, 'brands']);
 Route::get('brands/{slug}', [App\Http\Controllers\HomeController::class, 'product_by_brands']);
 
@@ -180,14 +180,14 @@ Route::get('shipping-policy', function (){
 });
 
 
+Route::get('collections/{url}', [HomeController::class, 'products_details']);
 Route::get('products/{url}', [HomeController::class, 'products_details']);
 Route::post('register-product', [HomeController::class, 'register_product']);
 Route::post('claim-warranty', [HomeController::class, 'claim_warranty']);
 Route::get('/search', [HomeController::class, 'searchTitle']);
 Route::get('/filter', [HomeController::class, 'filter']);
 Route::get('/filter-by-price', [HomeController::class, 'filter_by_price']);
-Route::get('offers/{url}', [HomeController::class, 'sustainability_overview']);
-Route::get('social-impact/{url}', [HomeController::class, 'social_impact']);
+
 //Route::get('offers/stewardship', [HomeController::class, 'sustainability_stewardship']);
 Route::get('service/{url}', [HomeController::class, 'get_service']);
 

@@ -6,101 +6,183 @@ $get_brands = get_brands();
 ?>
 @section('css')
     <style>
-        .pagination-wrapper {
-            margin: 0 auto;
-            width: 10%;
+        body {
+            position: relative;
         }
-        .page-item.active .page-link {
-            z-index: 3;
-            color: #fff;
-            background-color: #000;
-            border-color: #000;
+
+        .product-card {
+            border: 1px solid #e0e0e0;
+            text-align: center;
+            padding: 15px;
+            background-color: #ffffff;
+            position: relative;
         }
-        .page-link{
-            color:#000;
-        }
-        .sticky_header{
-            position:unset;
-        }
-        .watch_header + main {
-            margin-top: 0px;
-        }
-        .row.shoppagebtn {
-            padding: 10px;
-        }
-        .maindiv .shoppagebtn a {
-            padding: 5px;
-            height:unset;
-        }
-        .div_image img {
-            max-height: 300px;
+
+        .product-card img {
             max-width: 100%;
+            height: auto;
         }
 
-        .furniture_product_group1{
-            padding:0;
-            margin: 0;
-        }
-        .furniture_breadcrumb{
-            min-height: 400px;
-            padding: 50px 0px;
-        }
-        .f2_breadcrumb_nav_wrap {
-            margin-top: 50px;
+        .product-card .product-info {
+            margin-top: 10px;
         }
 
-        @media only screen and (min-width: 320px) and (max-width: 450px){
-
-            .item_content {
-                padding: 15px 0;
-            }
-
-            .div_image img {
-                max-width: 100%;
-                height: 100px;
-            }
-
-            .row.shoppagebtn{
-                padding:0;
-            }
-            .furniture_product_grid .item_image {
-                min-height: 150px;
-                width: 100%;
-            }
-            .furniture_product_grid {
-                padding: 10px;
-            }
-            .maindiv .shoppagebtn a {
-                padding: 10px;
-                height: unset;
-                width: 100%;
-                margin: 5px 0;
-            }
-            .maindiv .shoppagebtn a {
-                height: unset;
-                margin: 5px 0;
-                padding: 5px !important;
-                margin-bottom: 5px !important;
-                width: 100% !important;
-            }
-            .furniture_product_group1  h3.item_title a {
-                font-size: 24px;
-                margin-top: 15px;
-            }
-            .furniture_product_group1 .watch_product_item .item_price {
-                font-size: 14px;
-            }
-            .furniture_product_grid .item_price strong{
-                color: #272727;
-                font-size: 15px;
-            }
-
-            .option_select .nice-select{
-                height:unset;
-                line-height: unset;
-            }
+        .product-card .product-price {
+            color: #333;
         }
 
+        .product-card .product-discounted {
+            color: #b12704;
+            text-decoration: line-through;
+            margin-right: 5px;
+        }
+
+        .filter-btn {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            border: none;
+        }
+
+        /* Filter slider */
+        .filter-slider {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 3;
+            top: 0;
+            left: 0;
+            background-color: #ffffff;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            border-right: 1px solid #e0e0e0;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-slider .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 36px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .filter-slider .filter-content {
+            padding: 20px;
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2;
+            display: none;
+        }
+
+        /* Ratings */
+        .product-rating {
+            color: gold;
+        }
+
+        /* Text colors */
+        .product-info h5, .filter-slider h4 {
+            color: #333;
+        }
+
+
+    </style>
+
+    <style>
+        .banner {
+            background-image: url({{asset($sections->image)}});
+            background-size: cover;
+            background-position: center center;
+            height: 70vh;
+            border-image: fill 0 linear-gradient(#0003, #000);
+            display: grid;
+            place-items: center;
+            padding: 2rem;
+        }
+
+
+        .banner .tooltip {
+            width: 300px;
+            background: yellow;
+            height: 100px;
+            color: #fff;
+            font-size: 20px;
+            padding: 20px;
+            text-align: center;
+            top: anchor(10px);
+        }
+
+        .banner h2 {
+            color: #fff;
+            text-align: center;
+        }
+
+    </style>
+
+    <style>
+        .product-slider .slick-slide img {
+            height: 400px;
+            object-position: top;
+        }
+
+        h3.product-title a:hover {
+            color: maroon;
+        }
+
+        h3.product-title {
+            font-size: 16px;
+            margin: 15px 0;
+        }
+
+        .product-item img {
+            width: 100%;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            height: 400px;
+        }
+
+        .product-price-strike {
+            color: maroon;
+            font-size: 14px;
+        }
+
+        .sale_price {
+            font-size: 18px;
+        }
+
+        .discount-percentage {
+            font-size: 12px;
+            font-weight: 600;
+            background: maroon;
+            color: #fff;
+            padding: 0px 10px;
+        }
+
+        h3.product-title {
+            font-size: 16px;
+            margin: 15px 0;
+            font-weight: unset;
+        }
+
+        .product-desc:hover {
+            box-shadow: 0px 0px 15px #ddd;
+        }
+
+        .col-md-3.mt-3.product-desc {
+            padding: 15px 15px;
+        }
     </style>
 
 @stop
@@ -111,267 +193,155 @@ $get_brands = get_brands();
     $getAllCart = getCartProducts();
     ?>
 
-    <div class="maindiv">
-        <!-- sidebar mobile menu & sidebar cart - start
-           ================================================== -->
-{{--        <div class="sidebar-menu-wrapper">--}}
-{{--            @include('inc.web.shop-sidebar')--}}
-{{--        </div>--}}
-        <!-- sidebar mobile menu & sidebar cart - end
-           ================================================== -->
-        <!-- breadcrumb_section - start
-           ================================================== -->
-        <section class="breadcrumb_section furniture_breadcrumb deco_wrap d-flex align-items-center clearfix" data-bg-color="#f4f2f2">
-            <div class="container-fluid prl_90">
-                <h1 class="f2_page_title mb-0 text-uppercase">{{$category->category_name ?? 'Shop'}}</h1>
-            </div>
-{{--            <div class="deco_image">--}}
-{{--                <img src="{{asset($category->image)}}" alt="image_not_found">--}}
-{{--            </div>--}}
-        </section>
-        <div class="container-fluid prl_90">
-            <div class="f2_breadcrumb_nav_wrap">
-                <ul class="ce_breadcrumb_nav ul_li clearfix">
-                    <li><a href="{{url('/')}}">Home</a></li>
-                    <li>{{$category->category_name ?? 'Shop'}}</li>
-                </ul>
-            </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <section class="banner">
+
+        <div class="container ">
+            <h2>{{$sections->category_name}}</h2>
         </div>
-        <!-- breadcrumb_section - end
-           ================================================== -->
-        <!-- product_section - start
-           ================================================== -->
-        <section class="product_section sec_ptb_50 clearfix">
-            <div class="container-fluid prl_90">
-                <div class="f2_filter_bar mb_30">
+    </section>
 
-                    <div class="option_select d-flex align-items-center mb-0">
-                        <form action="#">
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between mb-4">
+            <div>
+                <button class="filter-btn" onclick="openFilter()">Filter</button>
+            </div>
+            <div>
+                <span>{{count($sections->get_products ?? '')}} products</span>
+            </div>
+            <div>
+                <select name="sortby" id="sortby2" class="form-control">
 
-                            <input type="hidden"
-                                   name="category_id"
-                                   id="category_id"
-                                   value="0"  />
+                    <option value="newarrivals">New Arrivals</option>
+                    <option value="lowtohigh">Low To High</option>
+                    <option value="hightolow">High To Low</option>
+                </select>
+            </div>
+            <input type="hidden" name="section_id" id="section_id" value="{{$sections->id ?? ''}}">
+        </div>
 
-                            <select name="sortby" id="sortby2" class="form-control">
-                                <option value="reload" selected="selected">Default</option>
-                                <option value="newarrivals">New Arrivals</option>
-                                <option value="lowtohigh">Low To High</option>
-                                <option value="hightolow">High To Low</option>
-                            </select>
-                        </form>
+
+
+        <div class="row product-list">
+            @forelse($sections->get_products as $getProducts)
+                <div class="col-md-3 mt-3 product-desc">
+                    <div class="product-item">
+                        <a href="{{url('products/'.$getProducts->slug)}}">
+                            <img src="{{asset($getProducts->photo)}}"
+                                 alt="{{$getProducts->title}}">
+                        </a>
+                        <h3 class="product-title text-center">
+                            <a href="{{url('products/'.$getProducts->slug)}}">{{$getProducts->title}}</a>
+                        </h3>
+                        <p class="product-price text-center">
+                            <span class="currency-symbol">₹</span>
+                            <span class="sale_price">{{ number_format($getProducts->product_actual_price ?? 0 , 2) }}</span>
+                            <del class="product-price-strike">
+                                <span class="currency-symbol">₹</span>
+                                {{ number_format($getProducts->product_max_selling_price ?? 0, 2) }}
+                            </del>
+                            <br>
+                            @if(!empty($getProducts->product_max_selling_price) && !empty($getProducts->product_actual_price))
+                                @php
+                                    $discount = (($getProducts->product_max_selling_price - $getProducts->product_actual_price) / $getProducts->product_max_selling_price) * 100;
+                                @endphp
+                                <span class="discount-percentage">{{ number_format($discount, 2) }}% OFF</span>
+                            @endif
+                        </p>
                     </div>
                 </div>
-                <div id="filteredProducts" class="furniture_product_group1 row">
-                    @forelse($get_products as $key => $category_product)
-                        <div class="furniture_product_grid col-lg-3 col-md-3 col-sm-6 col-xs-6 col-6">
-                            <div class="item_image">
-                                <div class="div_image">
-                                    <img src="{{asset($category_product->photo)}}" alt="{{$category_product->title}}">
-                                </div>
-                            </div>
-                            <div class="item_content">
-                                <h3 class="item_title"><a href="{{url('products/'.$category_product->slug)}}">{{$category_product->title}}</a></h3>
-                                <span class="item_price"> Rs. {{number_format($category_product->product_actual_price, 2)}}
-{{--                                    <del> Rs. {{$category_product->product_max_selling_price}}</del>--}}
-                                </span>
-                            </div>
-
-                            <div class="row shoppagebtn">
-                                <div class="col-md-12 col-12">
-
-                                    <a href="#"
-                                       data-size="{{ $category_product->size }}"
-                                       data-id="{{ $category_product->id }}"
-                                       data-id="{{ $category_product->id }}"
-                                       data-price="{{ $category_product->product_actual_price }}"
-                                       data-product_name="{{ $category_product->title }}"
-                                       data-qty="1"
-                                       data-msp="{{ $category_product->product_max_selling_price }}"
-                                       data-image="{{ $category_product->photo }}"
-                                       data-variation_product_id="{{ $category_product->product_id }}"
-                                       data-flash_sale="{{ $category_product->flash_sale }}"
-                                       data-flash_price="{{ $category_product->flash_price }}"
-                                       class="btn-cart custom_btn bg_carparts_red"
-                                       style="" id="addToCartButton"
-                                    ><i class="fal fa-shopping-basket mr-2"></i> Add to Cart</a>
-
-
-                                    <a class="tooltips button quick-view-link11 bg_carparts_red custom_btn"
-                                       data-placement="top"
-                                       title="Quick View"
-                                       data-toggle="modal"
-                                       id="one"
-                                       data-target="#quickview_modal"
-                                       data-backdrop="false"
-                                       data-product-id="{{ $category_product->id }}"
-                                       style=""
-                                    >
-                                        <i class="fal fa-search mr-2"></i> Quick View </a>
-                                </div>
-                            </div>
-                        </div>
-
-                    @empty
-
-                        <h5 class="text-center">You will get something awesome very soon. </h5>
-                    @endforelse
+            @empty
+                <div class="col-12">
+                    <p>No products found.</p>
                 </div>
-                <div class="load_more text-center clearfix">
-                    @if ($get_products->hasPages())
-                        <div class="pagination-wrapper">
-                            {{ $get_products->links() }}
-                        </div>
-                    @endif
-
-                </div>
-            </div>
-        </section>
-        <div class="sidebar-menu-wrapper">
-            <div class="filter_sidebar">
-                <button type="button" class="close_btn mb_50"><i class="fal fa-times"></i></button>
-                <div class="fs_widget fs_category_list">
-                    <h3 class="fs_widget_title text-uppercase">Top Categories</h3>
-                    <ul class="ul_li_block clearfix">
-                        @forelse($get_category as $get_categories)
-                            <li><a href="{{url('shop/'.$get_categories->slug)}}">
-                                    <span><i class="fab fa-black-tie"></i></span>{{$get_categories->category_name}}</a>
-                            </li>
-                        @empty
-                        @endforelse
-                    </ul>
-                </div>
-                <div class="fs_widget fs_price_list">
-                    <h3 class="fs_widget_title text-uppercase">Price filter</h3>
-                    <form action="#">
-                        <ul class="ul_li_block clearfix">
-                            <li>
-                                <input id="fs_price_1" type="radio" name="fs_price_wroup" checked>
-                                <label for="fs_price_1">$25 - $100</label>
-                            </li>
-                            <li>
-                                <input id="fs_price_2" type="radio" name="fs_price_wroup">
-                                <label for="fs_price_2">$100 - $200</label>
-                            </li>
-                            <li>
-                                <input id="fs_price_3" type="radio" name="fs_price_wroup">
-                                <label for="fs_price_3">$200 - $300</label>
-                            </li>
-                            <li>
-                                <input id="fs_price_4" type="radio" name="fs_price_wroup">
-                                <label for="fs_price_4">$400 - $500</label>
-                            </li>
-                            <li>
-                                <input id="fs_price_5" type="radio" name="fs_price_wroup">
-                                <label for="fs_price_5">$500 - $1000</label>
-                            </li>
-                        </ul>
-                    </form>
-                </div>
-                <div class="fs_widget fs_size_list">
-                    <h3 class="fs_widget_title text-uppercase">Size filter</h3>
-                    <form action="#">
-                        <ul class="ul_li clearfix">
-                            <li>
-                                <label for="fs_size_1"><input id="fs_size_1" type="radio" name="fs_size_group">XS</label>
-                            </li>
-                            <li>
-                                <label for="fs_size_2"><input id="fs_size_2" type="radio" name="fs_size_group">S</label>
-                            </li>
-                            <li>
-                                <label for="fs_size_3"><input id="fs_size_3" type="radio" name="fs_size_group">M</label>
-                            </li>
-                            <li>
-                                <label for="fs_size_4"><input id="fs_size_4" type="radio" name="fs_size_group">L</label>
-                            </li>
-                            <li>
-                                <label for="fs_size_5"><input id="fs_size_5" type="radio" name="fs_size_group">XL</label>
-                            </li>
-                            <li>
-                                <label for="fs_size_6"><input id="fs_size_6" type="radio" name="fs_size_group">XXL</label>
-                            </li>
-                        </ul>
-                    </form>
-                </div>
-
-            </div>
+            @endforelse
         </div>
-        <!-- product_section - end
-           ================================================== -->
+
     </div>
 
-{{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>--}}
-
-    <script>
-        $(document).ready(function(){
-            $("#sortby2").change(function () {
-                var end = this.value;
-                if(end=='reload'){
-                    location.reload();
-                }
-            });
-            if(screen.width > 768){
-
-            }else{
-                //alert("hello");
-
-                $(".imgStyle").css("height", "210px");
-                $(".bannerimg").css("height", "100px");
-            }
-
-        });
-    </script>
-
+    <!-- Filter Slider -->
+    <div id="filterSlider" class="filter-slider">
+        <span class="closebtn" onclick="closeFilter()">&times;</span>
+        <div class="filter-content">
+            <h4>Filter Options</h4>
+            <!-- Filter content goes here -->
+            <form>
+                <div class="form-group">
+                    <label for="priceRange">Price Range</label>
+                    <input type="range" class="form-control-range" id="priceRange">
+                </div>
+                <div class="form-group my-3">
+                    <label for="categoryFilter">Categories</label>
+                    <div id="categoryFilter">
+                        @foreach($categories as $category)
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="categories[]" value="{{ $category->id }}" id="category{{ $category->id }}">
+                                <label class="form-check-label" for="category{{ $category->id }}">
+                                    {{ $category->category_name }}
+                                </label>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Apply Filters</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
 @stop
 @section('script')
 
     <script>
-        $('#sortby2').on('change', function() {
-            const selectedValue = $(this).val();
-            console.log(selectedValue);
-            var selectedCategories = $('.category-checkbox:checked')
-                .map(function() {
-                    return $(this).attr('id').replace('cat-', '');
-                })
-                .get();
+        function openFilter() {
+            document.getElementById("filterSlider").style.width = "250px";
+            document.getElementById("overlay").style.display = "block";
+        }
 
-            var selectedBrands = $('.brand-checkbox:checked')
-                .map(function() {
-                    return $(this).attr('id').replace('brand-', '');
-                })
-                .get();
+        function closeFilter() {
+            document.getElementById("filterSlider").style.width = "0";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
 
-            var category_id = $('#category_id').val();
+    <script>
+        $(document).ready(function () {
+            $('#sortby2').on('change', function () {
+                const selectedSort = $(this).val();
+                const sectionId = $('#section_id').val();
 
-            $.ajax({
-                url: "{{url('/filter-by-price')}}", // Change this to your Laravel route for filtering
-                method: 'GET',
-                data: {
-                    categories: selectedCategories,
-                    brands: selectedBrands,
-                    category_id: category_id,
-                    sortby: selectedValue // Pass the selected sorting value
-                },
-                success: function(response) {
-                    $('#filteredProducts').html(response); // Update the content of the container
-                },
-                error: function(error) {
-                    console.log(error);
-                }
+                $.ajax({
+                    url: "{{url('/filter-by-price')}}",
+                    method: 'GET',
+                    data: {
+                        sortby: selectedSort,
+                        section_id: sectionId,
+                    },
+                    success: function (response) {
+                        // Replace the product list with the filtered/sorted products
+                        $('.product-list').html(response);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
             });
         });
+
     </script>
 
 
     <script>
-        $('.button').click(function(){
+        $('.button').click(function () {
             var buttonId = $(this).attr('id');
             $('#modal-container').removeAttr('class').addClass(buttonId);
             $('body').addClass('modal-active');
         })
 
-        $('#modal-container').click(function(){
+        $('#modal-container').click(function () {
             $(this).addClass('out');
             $('body').removeClass('modal-active');
         });
@@ -433,7 +403,6 @@ $get_brands = get_brands();
 {{--                        <div class="toolbox" style="margin-bottom:0rem;">--}}
 
 
-
 {{--                            <div class="toolbox-right">--}}
 
 {{--                                <div class="toolbox-sort">--}}
@@ -448,8 +417,8 @@ $get_brands = get_brands();
 {{--											<select name="sortby" id="sortby2" class="form-control">--}}
 {{--												<option value="reload" selected="selected">Default</option>--}}
 {{--												<option value="newarrivals">New Arrivals</option>--}}
-{{--												<!--option value="lowtohigh">Low To High</option>--}}
-{{--												<option value="hightolow">High To Low</option-->--}}
+{{--												<option value="lowtohigh">Low To High</option>--}}
+{{--												<option value="hightolow">High To Low</option--}}
 {{--											</select>--}}
 {{--										</div>--}}
 
@@ -459,7 +428,6 @@ $get_brands = get_brands();
 {{--                        </div><!-- End .toolbox -->--}}
 {{--                    </div>--}}
 {{--                </div>--}}
-
 
 
 {{--            </div><!-- End .container -->--}}
@@ -533,7 +501,6 @@ $get_brands = get_brands();
 
 {{--                                                </a>--}}
 {{--                                            </div>--}}
-
 
 
 {{--                                            <div class="product-cat">--}}

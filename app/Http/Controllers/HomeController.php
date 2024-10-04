@@ -186,20 +186,10 @@ class HomeController extends Controller
 
     function product_by_category($slug)
     {
-            $category = Category::where('slug', $slug)->first();
-        if (!empty($category)) {
-            $data['get_products'] = Product::where([
-                    'section_id' => $category->id,
-//                    'status' => '1',
-                ]
-            )
-                ->with('get_brands', 'sections','getPrices')
-//                ->orderBy('id', 'DESC')
-                ->paginate(20);
-            $data['category'] = $category;
-        }
-//        print_r($data['category']);die;
-        return view('web.category', $data);
+        $data['sections'] = Section::with('get_products')->where('slug', $slug)->first();
+        $data['categories'] = Category::where('status', '1')->get();
+//        print_r($data['categories']);die;
+        return view('web.shop', $data);
     }
 
     function shop()
@@ -300,6 +290,7 @@ class HomeController extends Controller
             // Include additional data as needed
         ]);
     }
+
 //    function products_details($url)
 //    {
 //        $data['get_middle_banner'] = BannerModel::where([
@@ -423,7 +414,6 @@ class HomeController extends Controller
 
     public function filter_by_price(Request $request)
     {
-//        print_r($request->all());die;
         // Your existing code to get selected categories and brands
 
         $selectedCategories = $request->input('categories', []);
@@ -441,7 +431,6 @@ class HomeController extends Controller
             $query->whereIn('brands_id', $selectedBrands);
         }
 
-// Rest of your code to fetch and return filtered products
 
         $filteredProducts = $query;
 
@@ -481,7 +470,7 @@ class HomeController extends Controller
         }
 
         if ($request->ajax()) {
-            return view('web.filtered_products', ['get_products' => $filteredProducts]);
+            return view('web.shop', ['get_products' => $filteredProducts])->render();
         }
 
 
